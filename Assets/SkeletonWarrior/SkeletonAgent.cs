@@ -2,6 +2,7 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
+using System.Collections;
 
 public class SkeletonAgent : Agent
 {
@@ -9,7 +10,6 @@ public class SkeletonAgent : Agent
     public float maxHealth = 3f;
     public float moveSpeed = 2f;
     public float rotationSpeed = 100f;
-    public float attackRange = 1.5f;
     public float attackCooldown = 3f;
 
 
@@ -22,16 +22,23 @@ public class SkeletonAgent : Agent
     [Header("References")]
     private Animator animator;
     private Transform playerTransform;
+    public GameObject weapon;
+
+
 
 
 
     private float currentHealth;
+    private bool AttackReady;
 
 
     public override void Initialize()
     {
         animator = GetComponent<Animator>();
         GameObject playerObj = GameObject.FindWithTag("Player");
+        playerTransform = playerObj.transform;
+        AttackReady = true; 
+
 
     }
 
@@ -49,28 +56,15 @@ public class SkeletonAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         // Observations:
-        // 1. Agent's normalized health (1 float)
-        // 2. Normalized direction to player (3 floats)
-        // 3. Distance to player (1 float)
-        // 4. Can attack player (boolean -> float, 1 float)
-        // Total = 6 floats
+        // 1. Agent's normalized health (1)
+        // 2. Agent attack ready (1)
+
+        // Total = 2
 
         sensor.AddObservation(currentHealth / maxHealth); // Observe own health
+        sensor.AddObservation(AttackReady ? 1f : 0f); // Observe if attack is ready
 
-        if (playerTransform == null)
-        {
-            sensor.AddObservation(Vector3.zero); // Relative position (normalized)
-            sensor.AddObservation(0f);           // Distance
-            sensor.AddObservation(false);        // Can Attack
-            return;
-        }
 
-        Vector3 toPlayer = playerTransform.localPosition - transform.localPosition;
-        sensor.AddObservation(toPlayer.normalized); // Use normalized direction
-        float distanceToPlayer = toPlayer.magnitude; // More efficient than Vector3.Distance
-        sensor.AddObservation(distanceToPlayer);
-        bool canAttack = (distanceToPlayer <= attackRange);
-        sensor.AddObservation(canAttack);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -92,11 +86,28 @@ public class SkeletonAgent : Agent
         // Attack Action
         if (attackAction == 1)
         {
+
+            if (AttackReady == false) {
+
+                return;
+            
+            }
+
             AttemptAttack();
+
+            StartCoroutine(AttackCooldownCoroutine(attackCooldown));
+
         }
 
         // Small time penalty
         AddReward(-0.001f / MaxStep);
+    }
+
+    IEnumerator AttackCooldownCoroutine(float cooldown)
+    {
+        AttackReady = false;
+        yield return new WaitForSeconds(cooldown);
+        AttackReady = true;
     }
 
     void AttemptAttack()
@@ -125,6 +136,7 @@ public class SkeletonAgent : Agent
         currentHealth -= damage;
         animator.SetTrigger("damage");
         AddReward(tookDamagePenalty);
+
         Debug.Log($"Agent took {damage} damage. Current health: {currentHealth}");
 
         if (currentHealth <= 0)
@@ -141,11 +153,11 @@ public class SkeletonAgent : Agent
 
     public void StartDealDamage()
     {
-        GetComponent<EnemyDamageDealer>().StartDealDamage();
+        weapon.GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
     }
     public void EndDealDamage()
     {
-        GetComponent<EnemyDamageDealer>().EndDealDamage();
+        weapon.GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
     }
      
 

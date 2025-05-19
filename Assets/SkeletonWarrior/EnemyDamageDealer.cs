@@ -22,6 +22,8 @@ public class EnemyDamageDealer : MonoBehaviour
 
     void Update()
     {
+
+        
         if (canDealDamage && !hasDealtDamage)
         {
             RaycastHit hit;
@@ -29,6 +31,8 @@ public class EnemyDamageDealer : MonoBehaviour
             int layerMask = 1 << 8; //  Layer 8 for Player
             if (Physics.Raycast(transform.position, -transform.up, out hit, weaponLength, layerMask))
             {
+
+                print("Hit: " + hit.transform.name);
                 
                 if (hit.transform.TryGetComponent(out PlayerDummy health)) 
                 {

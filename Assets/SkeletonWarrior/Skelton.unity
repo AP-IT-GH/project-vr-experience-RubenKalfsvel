@@ -325,6 +325,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &611859935 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1978038139641696588, guid: 4921fcd859a7b0c45848c5f54d6077ad, type: 3}
+  m_PrefabInstance: {fileID: 1497835864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954322876cf1ef948b7404d9b87c1687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1461785396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4889814414592959799, guid: 4921fcd859a7b0c45848c5f54d6077ad, type: 3}
+  m_PrefabInstance: {fileID: 1497835864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1497835864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -333,6 +349,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1978038139641696588, guid: 4921fcd859a7b0c45848c5f54d6077ad, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1461785396}
+    - target: {fileID: 2547746033042380475, guid: 4921fcd859a7b0c45848c5f54d6077ad, type: 3}
+      propertyPath: agent
+      value: 
+      objectReference: {fileID: 611859935}
     - target: {fileID: 8210207690257594047, guid: 4921fcd859a7b0c45848c5f54d6077ad, type: 3}
       propertyPath: m_Name
       value: Skeleton Warrior
@@ -377,7 +401,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8866335464261020743, guid: 4921fcd859a7b0c45848c5f54d6077ad, type: 3}
+      propertyPath: weaponDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866335464261020743, guid: 4921fcd859a7b0c45848c5f54d6077ad, type: 3}
+      propertyPath: weaponLength
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8866335464261020743, guid: 4921fcd859a7b0c45848c5f54d6077ad, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
