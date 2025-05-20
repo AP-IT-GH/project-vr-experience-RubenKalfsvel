@@ -51,6 +51,7 @@ public class SkeletonAgent : Agent
         animator.SetFloat("speed", 0);
         animator.ResetTrigger("damage");
         animator.ResetTrigger("attack");
+        animator.SetInteger("deathType", 0);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -81,7 +82,7 @@ public class SkeletonAgent : Agent
         // Movement & Rotation
         transform.Translate(transform.forward * moveInput * moveSpeed * Time.deltaTime, Space.World);
         transform.Rotate(transform.up, rotateInput * rotationSpeed * Time.deltaTime);
-        animator.SetFloat("speed", Mathf.Abs(moveInput));
+        animator.SetFloat("speed", moveInput);
 
         // Attack Action
         if (attackAction == 1)
@@ -101,6 +102,7 @@ public class SkeletonAgent : Agent
 
         // Small time penalty
         AddReward(-0.001f / MaxStep);
+
     }
 
     IEnumerator AttackCooldownCoroutine(float cooldown)
@@ -147,6 +149,8 @@ public class SkeletonAgent : Agent
 
     private void Die()
     {
+        int deathType = Random.Range(1, 4); // 0, 1, or 2
+        animator.SetInteger("DeathType" , deathType);
         AddReward(deathPenalty);
         EndEpisode();
     }

@@ -357,6 +357,10 @@ PrefabInstance:
       propertyPath: agent
       value: 
       objectReference: {fileID: 611859935}
+    - target: {fileID: 4867750271167082959, guid: 4921fcd859a7b0c45848c5f54d6077ad, type: 3}
+      propertyPath: m_BrainParameters.VectorObservationSize
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8210207690257594047, guid: 4921fcd859a7b0c45848c5f54d6077ad, type: 3}
       propertyPath: m_Name
       value: Skeleton Warrior
