@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1747096554",
+        "python_version": "3.9.21 (main, Dec 11 2024, 16:35:24) [MSC v.1929 64 bit (AMD64)]",
+        "command_line_arguments": "D:\\Anaconda\\envs\\VRExperience\\Scripts\\mlagents-learn SkeletonAgent.yaml --run-id=test1 --force",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.1+cu110",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1747096578"
+    },
+    "total": 23.919254199999997,
+    "count": 1,
+    "self": 0.005000199999994237,
+    "children": {
+        "run_training.setup": {
+            "total": 0.07055310000000004,
+            "count": 1,
+            "self": 0.07055310000000004
+        },
+        "TrainerController.start_learning": {
+            "total": 23.8437009,
+            "count": 1,
+            "self": 0.00028290000000197324,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 23.843408800000002,
+                    "count": 1,
+                    "self": 23.843408800000002
+                },
+                "trainer_threads": {
+                    "total": 7.999999986907369e-07,
+                    "count": 1,
+                    "self": 7.999999986907369e-07
+                },
+                "TrainerController._save_models": {
+                    "total": 8.399999998687235e-06,
+                    "count": 1,
+                    "self": 8.399999998687235e-06
+                }
+            }
+        }
+    }
+}
