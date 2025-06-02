@@ -46,8 +46,8 @@ public class SkeletonAgent : Agent
     {
         
         currentHealth = maxHealth;
-        transform.localPosition = new Vector3(Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f));
-        transform.localRotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
+        //transform.localPosition = new Vector3(Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f));
+        //transform.localRotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
         animator.SetFloat("speed", 0);
         animator.ResetTrigger("damage");
         animator.ResetTrigger("attack");

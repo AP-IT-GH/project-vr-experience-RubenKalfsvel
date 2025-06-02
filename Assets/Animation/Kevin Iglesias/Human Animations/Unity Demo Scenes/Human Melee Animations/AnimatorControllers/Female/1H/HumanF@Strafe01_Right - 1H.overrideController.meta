@@ -1,16 +1,8 @@
 fileFormatVersion: 2
-guid: 1a8122d4052bdf845b94f2b72a91e28e
+guid: 407871c57c5675e43ae76f65194e6c50
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 22100000
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 165785
-  packageName: Human Melee Animations FREE
-  packageVersion: 2.0.1
-  assetPath: Assets/Kevin Iglesias/Human Animations/Unity Demo Scenes/Human Melee
-    Animations/AnimatorControllers/Female/1H/HumanF@Strafe01_Right - 1H.overrideController
-  uploadId: 756115
