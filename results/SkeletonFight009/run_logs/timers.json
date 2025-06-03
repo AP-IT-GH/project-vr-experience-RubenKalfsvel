@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1748895078",
+        "python_version": "3.9.21 (main, Dec 11 2024, 16:35:24) [MSC v.1929 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\tjorv\\anaconda3\\envs\\MlAgent\\Scripts\\mlagents-learn config/skeletonAgent.yaml --run-id=SkeletonFight009",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.1+cu110",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1748895088"
+    },
+    "total": 10.402806900000002,
+    "count": 1,
+    "self": 0.007572400000000812,
+    "children": {
+        "run_training.setup": {
+            "total": 0.07705469999999992,
+            "count": 1,
+            "self": 0.07705469999999992
+        },
+        "TrainerController.start_learning": {
+            "total": 10.318179800000001,
+            "count": 1,
+            "self": 0.00012629999999980157,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 10.318031600000001,
+                    "count": 1,
+                    "self": 10.318031600000001
+                },
+                "TrainerController._save_models": {
+                    "total": 2.190000000013015e-05,
+                    "count": 1,
+                    "self": 2.190000000013015e-05
+                }
+            }
+        }
+    }
+}

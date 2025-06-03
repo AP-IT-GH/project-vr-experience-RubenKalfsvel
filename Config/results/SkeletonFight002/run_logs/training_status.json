@@ -1,0 +1,57 @@
+{
+    "SkeletonAgent": {
+        "checkpoints": [
+            {
+                "steps": 49980,
+                "file_path": "results\\SkeletonFight002\\SkeletonAgent\\SkeletonAgent-49980.onnx",
+                "reward": null,
+                "creation_time": 1748891199.2444901,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight002\\SkeletonAgent\\SkeletonAgent-49980.pt"
+                ]
+            },
+            {
+                "steps": 99942,
+                "file_path": "results\\SkeletonFight002\\SkeletonAgent\\SkeletonAgent-99942.onnx",
+                "reward": -1.6000365537997823,
+                "creation_time": 1748891256.6687288,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight002\\SkeletonAgent\\SkeletonAgent-99942.pt"
+                ]
+            },
+            {
+                "steps": 149953,
+                "file_path": "results\\SkeletonFight002\\SkeletonAgent\\SkeletonAgent-149953.onnx",
+                "reward": null,
+                "creation_time": 1748891313.0880172,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight002\\SkeletonAgent\\SkeletonAgent-149953.pt"
+                ]
+            },
+            {
+                "steps": 198145,
+                "file_path": "results\\SkeletonFight002\\SkeletonAgent\\SkeletonAgent-198145.onnx",
+                "reward": null,
+                "creation_time": 1748891490.2136586,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight002\\SkeletonAgent\\SkeletonAgent-198145.pt"
+                ]
+            }
+        ],
+        "elo": 1183.0177887581544,
+        "final_checkpoint": {
+            "steps": 198145,
+            "file_path": "results\\SkeletonFight002\\SkeletonAgent.onnx",
+            "reward": null,
+            "creation_time": 1748891490.2136586,
+            "auxillary_file_paths": [
+                "results\\SkeletonFight002\\SkeletonAgent\\SkeletonAgent-198145.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
