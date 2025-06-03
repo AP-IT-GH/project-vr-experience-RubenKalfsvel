@@ -41,10 +41,10 @@ public class EnemyDamageDealer : MonoBehaviour
                     
 
                     
-                    if (agent != null)
+                    /*if (agent != null)
                     {
                         agent.ReportSuccessfulHit(); 
-                    }
+                    }*/
 
                     // Prevent dealing damage multiple times per swing
                     hasDealtDamage = true;
