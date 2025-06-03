@@ -13,11 +13,15 @@ public class SkeletonAgent : Agent
     public float attackCooldown = 2f;
 
     [Header("Rewards")]
-    public float hitOpponentReward = 0.5f;
+    public float hitOpponentReward = 1f;
     public float tookDamagePenalty = -0.2f;
     public float deathPenalty = -1.0f;
-    public float killReward = 1.0f;
+    public float killReward = 2.0f;
     public float missedAttackPenalty = -0.05f;
+    public float distancePenalty = -0.02f;
+    public float tooFarDistance = 10f;
+    public float combatProximityReward = 0.01f;
+    public float orientationReward = 0.005f;
 
     [Header("References")]
     private Animator animator;
@@ -25,13 +29,8 @@ public class SkeletonAgent : Agent
     public SkeletonAgent opponentAgent;
     public Transform opponentTransform;
 
-    [Header("Distance Penalty")]
-    public float distancePenalty = -0.02f; // 10x stronger
-    public float tooFarDistance = 5f;
-
     private float currentHealth;
     private bool attackReady;
-
     private bool attackLanded;
 
     public override void Initialize()
@@ -69,27 +68,6 @@ public class SkeletonAgent : Agent
     {
         sensor.AddObservation(currentHealth / maxHealth);
         sensor.AddObservation(attackReady ? 1f : 0f);
-
-        if (opponentTransform != null)
-        {
-            Vector3 toOpponent = opponentTransform.position - transform.position;
-            sensor.AddObservation(toOpponent.normalized);
-            sensor.AddObservation(toOpponent.magnitude / 10f); // normalize distance
-
-            float angle = Vector3.Angle(transform.forward, toOpponent);
-            sensor.AddObservation(angle / 180f); // normalized angle
-
-            PlayerDummy opponentHealth = opponentTransform.GetComponent<PlayerDummy>();
-            sensor.AddObservation(opponentHealth != null ? opponentHealth.currentHealth / 3f : 0f);
-        }
-        else
-        {
-            // Pad observations if opponent is missing
-            sensor.AddObservation(Vector3.zero);
-            sensor.AddObservation(0f);
-            sensor.AddObservation(0f);
-            sensor.AddObservation(0f);
-        }
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -98,36 +76,40 @@ public class SkeletonAgent : Agent
         float rotateInput = actions.ContinuousActions[1];
         int combatAction = actions.DiscreteActions[0];
 
-        // Movement & Rotation
-        transform.Translate(transform.forward * moveInput * moveSpeed * Time.deltaTime, Space.World);
-        transform.Rotate(transform.up, rotateInput * rotationSpeed * Time.deltaTime);
-        animator.SetFloat("speed", moveInput);
+        float effectiveMoveInput = attackReady ? moveInput : 0f;
+        float effectiveRotateInput = attackReady ? rotateInput : 0f;
 
-        // Combat Actions
+        float speedMultiplier = effectiveMoveInput >= 0 ? 1f : 0.60f;
+        transform.Translate(transform.forward * effectiveMoveInput * moveSpeed * speedMultiplier * Time.deltaTime, Space.World);
+        transform.Rotate(transform.up, effectiveRotateInput * rotationSpeed * Time.deltaTime);
+        animator.SetFloat("speed", effectiveMoveInput);
+
         if (combatAction == 1 && attackReady)
         {
             AttemptAttack();
             StartCoroutine(AttackCooldownCoroutine(attackCooldown));
         }
 
-        // Penalty for being too far from opponent
         if (opponentTransform != null)
         {
             float distance = Vector3.Distance(transform.position, opponentTransform.position);
             if (distance > tooFarDistance)
             {
+                Debug.Log("Too far apart! Applied penalty and reset.");
                 AddReward(distancePenalty);
+                EndEpisode();
             }
             float combatDistance = 2.5f;
             if (distance < combatDistance)
             {
-                AddReward(0.01f); // Encourage staying close
+                AddReward(combatProximityReward);
             }
 
+            Vector3 toOpponent = opponentTransform.position - transform.position;
+            float forwardDot = Vector3.Dot(transform.forward, toOpponent.normalized);
+            AddReward(forwardDot * orientationReward);
         }
 
-
-        // Tiny time penalty to encourage efficiency
         AddReward(-0.001f / MaxStep);
     }
 
@@ -140,10 +122,8 @@ public class SkeletonAgent : Agent
 
     void AttemptAttack()
     {
-        attackLanded = false; // reset before swing
+        attackLanded = false;
         animator.SetTrigger("attack");
-
-        // Schedule check for miss after cooldown
         StartCoroutine(CheckAttackMissedAfterDelay(attackCooldown));
     }
 
@@ -157,7 +137,6 @@ public class SkeletonAgent : Agent
         }
     }
 
-
     public void StartDealDamage()
     {
         weapon.GetComponentInChildren<EnemyDamageDealer>()?.StartDealDamage();
@@ -168,7 +147,6 @@ public class SkeletonAgent : Agent
         weapon.GetComponentInChildren<EnemyDamageDealer>()?.EndDealDamage();
     }
 
-    // Called by EnemyDamageDealer when the agent lands a hit
     public void ReportSuccessfulHit()
     {
         attackLanded = true;
@@ -186,7 +164,6 @@ public class SkeletonAgent : Agent
             }
         }
     }
-
 
     public void TakeDamage(float damage)
     {
@@ -212,7 +189,7 @@ public class SkeletonAgent : Agent
 
     Vector3 GetRandomSpawnPosition()
     {
-        float range = 3f;
+        float range = 8f;
         return new Vector3(Random.Range(-range, range), 0f, Random.Range(-range, range));
     }
 
@@ -220,7 +197,6 @@ public class SkeletonAgent : Agent
     {
         var continuousActionsOut = actionsOut.ContinuousActions;
         var discreteActionsOut = actionsOut.DiscreteActions;
-
         continuousActionsOut[0] = Input.GetAxis("Vertical");
         continuousActionsOut[1] = Input.GetAxis("Horizontal");
         discreteActionsOut[0] = Input.GetKey(KeyCode.Space) ? 1 : 0;
