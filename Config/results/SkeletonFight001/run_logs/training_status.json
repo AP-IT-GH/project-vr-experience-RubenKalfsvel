@@ -1,0 +1,57 @@
+{
+    "SkeletonAgent": {
+        "checkpoints": [
+            {
+                "steps": 49968,
+                "file_path": "results\\SkeletonFight001\\SkeletonAgent\\SkeletonAgent-49968.onnx",
+                "reward": null,
+                "creation_time": 1748890212.5300877,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight001\\SkeletonAgent\\SkeletonAgent-49968.pt"
+                ]
+            },
+            {
+                "steps": 99954,
+                "file_path": "results\\SkeletonFight001\\SkeletonAgent\\SkeletonAgent-99954.onnx",
+                "reward": null,
+                "creation_time": 1748890522.1656022,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight001\\SkeletonAgent\\SkeletonAgent-99954.pt"
+                ]
+            },
+            {
+                "steps": 149961,
+                "file_path": "results\\SkeletonFight001\\SkeletonAgent\\SkeletonAgent-149961.onnx",
+                "reward": null,
+                "creation_time": 1748890824.598935,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight001\\SkeletonAgent\\SkeletonAgent-149961.pt"
+                ]
+            },
+            {
+                "steps": 176233,
+                "file_path": "results\\SkeletonFight001\\SkeletonAgent\\SkeletonAgent-176233.onnx",
+                "reward": null,
+                "creation_time": 1748891046.2281332,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight001\\SkeletonAgent\\SkeletonAgent-176233.pt"
+                ]
+            }
+        ],
+        "elo": 1192.0081550350158,
+        "final_checkpoint": {
+            "steps": 176233,
+            "file_path": "results\\SkeletonFight001\\SkeletonAgent.onnx",
+            "reward": null,
+            "creation_time": 1748891046.2281332,
+            "auxillary_file_paths": [
+                "results\\SkeletonFight001\\SkeletonAgent\\SkeletonAgent-176233.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

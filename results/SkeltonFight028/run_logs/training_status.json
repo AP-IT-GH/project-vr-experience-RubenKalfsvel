@@ -1,0 +1,65 @@
+{
+    "SkeletonAgent": {
+        "checkpoints": [
+            {
+                "steps": 849946,
+                "file_path": "results\\SkeltonFight028\\SkeletonAgent\\SkeletonAgent-849946.onnx",
+                "reward": 834.2625942826271,
+                "creation_time": 1748966934.524026,
+                "auxillary_file_paths": [
+                    "results\\SkeltonFight028\\SkeletonAgent\\SkeletonAgent-849946.pt"
+                ]
+            },
+            {
+                "steps": 899958,
+                "file_path": "results\\SkeltonFight028\\SkeletonAgent\\SkeletonAgent-899958.onnx",
+                "reward": 1014.8426823616028,
+                "creation_time": 1748966970.0009534,
+                "auxillary_file_paths": [
+                    "results\\SkeltonFight028\\SkeletonAgent\\SkeletonAgent-899958.pt"
+                ]
+            },
+            {
+                "steps": 949949,
+                "file_path": "results\\SkeltonFight028\\SkeletonAgent\\SkeletonAgent-949949.onnx",
+                "reward": null,
+                "creation_time": 1748967004.9538572,
+                "auxillary_file_paths": [
+                    "results\\SkeltonFight028\\SkeletonAgent\\SkeletonAgent-949949.pt"
+                ]
+            },
+            {
+                "steps": 999943,
+                "file_path": "results\\SkeltonFight028\\SkeletonAgent\\SkeletonAgent-999943.onnx",
+                "reward": 36.85680341720581,
+                "creation_time": 1748967038.8320978,
+                "auxillary_file_paths": [
+                    "results\\SkeltonFight028\\SkeletonAgent\\SkeletonAgent-999943.pt"
+                ]
+            },
+            {
+                "steps": 1000007,
+                "file_path": "results\\SkeltonFight028\\SkeletonAgent\\SkeletonAgent-1000007.onnx",
+                "reward": 36.85680341720581,
+                "creation_time": 1748967038.881917,
+                "auxillary_file_paths": [
+                    "results\\SkeltonFight028\\SkeletonAgent\\SkeletonAgent-1000007.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000007,
+            "file_path": "results\\SkeltonFight028\\SkeletonAgent.onnx",
+            "reward": 36.85680341720581,
+            "creation_time": 1748967038.881917,
+            "auxillary_file_paths": [
+                "results\\SkeltonFight028\\SkeletonAgent\\SkeletonAgent-1000007.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

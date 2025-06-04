@@ -1,0 +1,66 @@
+{
+    "SkeletonAgent": {
+        "checkpoints": [
+            {
+                "steps": 349959,
+                "file_path": "results\\SkeletonFight003\\SkeletonAgent\\SkeletonAgent-349959.onnx",
+                "reward": null,
+                "creation_time": 1748891941.3159192,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight003\\SkeletonAgent\\SkeletonAgent-349959.pt"
+                ]
+            },
+            {
+                "steps": 399989,
+                "file_path": "results\\SkeletonFight003\\SkeletonAgent\\SkeletonAgent-399989.onnx",
+                "reward": null,
+                "creation_time": 1748892018.4799595,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight003\\SkeletonAgent\\SkeletonAgent-399989.pt"
+                ]
+            },
+            {
+                "steps": 449938,
+                "file_path": "results\\SkeletonFight003\\SkeletonAgent\\SkeletonAgent-449938.onnx",
+                "reward": null,
+                "creation_time": 1748892089.1456244,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight003\\SkeletonAgent\\SkeletonAgent-449938.pt"
+                ]
+            },
+            {
+                "steps": 499973,
+                "file_path": "results\\SkeletonFight003\\SkeletonAgent\\SkeletonAgent-499973.onnx",
+                "reward": null,
+                "creation_time": 1748892165.228698,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight003\\SkeletonAgent\\SkeletonAgent-499973.pt"
+                ]
+            },
+            {
+                "steps": 501637,
+                "file_path": "results\\SkeletonFight003\\SkeletonAgent\\SkeletonAgent-501637.onnx",
+                "reward": null,
+                "creation_time": 1748892165.5076172,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight003\\SkeletonAgent\\SkeletonAgent-501637.pt"
+                ]
+            }
+        ],
+        "elo": 1122.0980189156028,
+        "final_checkpoint": {
+            "steps": 501637,
+            "file_path": "results\\SkeletonFight003\\SkeletonAgent.onnx",
+            "reward": null,
+            "creation_time": 1748892165.5076172,
+            "auxillary_file_paths": [
+                "results\\SkeletonFight003\\SkeletonAgent\\SkeletonAgent-501637.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

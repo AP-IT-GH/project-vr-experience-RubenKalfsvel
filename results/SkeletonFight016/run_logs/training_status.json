@@ -1,0 +1,29 @@
+{
+    "SkeletonAgent": {
+        "checkpoints": [
+            {
+                "steps": 18432,
+                "file_path": "results\\SkeletonFight016\\SkeletonAgent\\SkeletonAgent-18432.onnx",
+                "reward": null,
+                "creation_time": 1748955147.4362686,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight016\\SkeletonAgent\\SkeletonAgent-18432.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 18432,
+            "file_path": "results\\SkeletonFight016\\SkeletonAgent.onnx",
+            "reward": null,
+            "creation_time": 1748955147.4362686,
+            "auxillary_file_paths": [
+                "results\\SkeletonFight016\\SkeletonAgent\\SkeletonAgent-18432.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "SkeletonAgent": {
+        "checkpoints": [
+            {
+                "steps": 199940,
+                "file_path": "results\\SkeletonDuel\\SkeletonAgent\\SkeletonAgent-199940.onnx",
+                "reward": 49.992624481519066,
+                "creation_time": 1748944284.831861,
+                "auxillary_file_paths": [
+                    "results\\SkeletonDuel\\SkeletonAgent\\SkeletonAgent-199940.pt"
+                ]
+            },
+            {
+                "steps": 299947,
+                "file_path": "results\\SkeletonDuel\\SkeletonAgent\\SkeletonAgent-299947.onnx",
+                "reward": null,
+                "creation_time": 1748944365.226108,
+                "auxillary_file_paths": [
+                    "results\\SkeletonDuel\\SkeletonAgent\\SkeletonAgent-299947.pt"
+                ]
+            },
+            {
+                "steps": 399940,
+                "file_path": "results\\SkeletonDuel\\SkeletonAgent\\SkeletonAgent-399940.onnx",
+                "reward": 47.16899764537811,
+                "creation_time": 1748944444.524,
+                "auxillary_file_paths": [
+                    "results\\SkeletonDuel\\SkeletonAgent\\SkeletonAgent-399940.pt"
+                ]
+            },
+            {
+                "steps": 499972,
+                "file_path": "results\\SkeletonDuel\\SkeletonAgent\\SkeletonAgent-499972.onnx",
+                "reward": 47.838998436927795,
+                "creation_time": 1748944528.7249184,
+                "auxillary_file_paths": [
+                    "results\\SkeletonDuel\\SkeletonAgent\\SkeletonAgent-499972.pt"
+                ]
+            },
+            {
+                "steps": 500036,
+                "file_path": "results\\SkeletonDuel\\SkeletonAgent\\SkeletonAgent-500036.onnx",
+                "reward": 47.838998436927795,
+                "creation_time": 1748944528.7973604,
+                "auxillary_file_paths": [
+                    "results\\SkeletonDuel\\SkeletonAgent\\SkeletonAgent-500036.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500036,
+            "file_path": "results\\SkeletonDuel\\SkeletonAgent.onnx",
+            "reward": 47.838998436927795,
+            "creation_time": 1748944528.7973604,
+            "auxillary_file_paths": [
+                "results\\SkeletonDuel\\SkeletonAgent\\SkeletonAgent-500036.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

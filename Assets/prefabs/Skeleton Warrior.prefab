@@ -3470,11 +3470,16 @@ MonoBehaviour:
   moveSpeed: 4
   rotationSpeed: 100
   attackCooldown: 3
-  hitPlayerReward: 0.5
+  hitOpponentReward: 0.5
   tookDamagePenalty: -0.2
   deathPenalty: -1
+  killReward: 1
   missedAttackPenalty: -0.05
   weapon: {fileID: 2402625834085863640}
+  opponentAgent: {fileID: 0}
+  opponentTransform: {fileID: 0}
+  distancePenalty: -0.002
+  tooFarDistance: 5
 --- !u!114 &6778872194897164403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3499,7 +3504,7 @@ MonoBehaviour:
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 1
+  m_BehaviorType: 0
   m_BehaviorName: SkeletonAgent
   TeamId: 0
   m_UseChildSensors: 1

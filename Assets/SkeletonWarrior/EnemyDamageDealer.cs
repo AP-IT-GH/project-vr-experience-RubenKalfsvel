@@ -1,70 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyDamageDealer : MonoBehaviour
 {
-    bool canDealDamage;
-    bool hasDealtDamage;
+    private bool canDealDamage;
+    private bool hasDealtDamage;
 
-    [SerializeField] float weaponLength;
-    [SerializeField] float weaponDamage;
+    [SerializeField] private Transform tip; // Assign in Inspector
+    [SerializeField] private float weaponDamage = 1f;
+    [SerializeField] private LayerMask targetLayer; // Set to "Agent" or custom layer
 
-    private SkeletonAgent agent; 
+    private SkeletonAgent agent;
 
     void Start()
     {
-        canDealDamage = false;
-        hasDealtDamage = false;
         agent = GetComponentInParent<SkeletonAgent>();
- 
     }
 
     void Update()
     {
+        if (!canDealDamage || hasDealtDamage || tip == null) return;
 
-        
-        if (canDealDamage && !hasDealtDamage)
+        Vector3 origin = transform.position;         // Pommel position
+        Vector3 direction = (tip.position - origin).normalized;
+        float distance = Vector3.Distance(origin, tip.position);
+
+        if (Physics.Raycast(origin, direction, out RaycastHit hit, distance, targetLayer))
         {
-            RaycastHit hit;
-
-            int layerMask = 1 << 8; //  Layer 8 for Player
-            if (Physics.Raycast(transform.position, -transform.up, out hit, weaponLength, layerMask))
+            if (hit.transform.TryGetComponent(out SkeletonAgent targetAgent) && targetAgent != agent)
             {
-
-                print("Hit: " + hit.transform.name);
-                
-                if (hit.transform.TryGetComponent(out PlayerDummy health)) 
-                {
-                    
-                    health.TakeDamage(weaponDamage);
-                    
-
-                    
-                    if (agent != null)
-                    {
-                        agent.ReportSuccessfulHit(); 
-                    }
-
-                    // Prevent dealing damage multiple times per swing
-                    hasDealtDamage = true;
-                }
+                targetAgent.TakeDamage(weaponDamage);
+                agent?.ReportSuccessfulHit();
+                hasDealtDamage = true;
             }
         }
     }
+
     public void StartDealDamage()
     {
         canDealDamage = true;
         hasDealtDamage = false;
     }
+
     public void EndDealDamage()
     {
-        canDealDamage = false; 
+        canDealDamage = false;
     }
 
-    private void OnDrawGizmos()
+    void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, transform.position - transform.up * weaponLength);
+        if (tip != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, tip.position);
+        }
     }
 }

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - Enemy
+  - Arena
   layers:
   - Default
   - TransparentFX
@@ -12,7 +14,7 @@ TagManager:
   - Enemy
   - Water
   - UI
-  - 
+  - Arena
   - 
   - Player
   - 

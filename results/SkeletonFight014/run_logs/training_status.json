@@ -1,0 +1,47 @@
+{
+    "SkeletonAgent": {
+        "checkpoints": [
+            {
+                "steps": 49984,
+                "file_path": "results\\SkeletonFight014\\SkeletonAgent\\SkeletonAgent-49984.onnx",
+                "reward": null,
+                "creation_time": 1748954662.4575748,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight014\\SkeletonAgent\\SkeletonAgent-49984.pt"
+                ]
+            },
+            {
+                "steps": 99968,
+                "file_path": "results\\SkeletonFight014\\SkeletonAgent\\SkeletonAgent-99968.onnx",
+                "reward": null,
+                "creation_time": 1748954721.7800288,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight014\\SkeletonAgent\\SkeletonAgent-99968.pt"
+                ]
+            },
+            {
+                "steps": 106496,
+                "file_path": "results\\SkeletonFight014\\SkeletonAgent\\SkeletonAgent-106496.onnx",
+                "reward": null,
+                "creation_time": 1748954744.305733,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight014\\SkeletonAgent\\SkeletonAgent-106496.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 106496,
+            "file_path": "results\\SkeletonFight014\\SkeletonAgent.onnx",
+            "reward": null,
+            "creation_time": 1748954744.305733,
+            "auxillary_file_paths": [
+                "results\\SkeletonFight014\\SkeletonAgent\\SkeletonAgent-106496.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
