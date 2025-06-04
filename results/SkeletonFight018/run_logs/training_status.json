@@ -1,0 +1,56 @@
+{
+    "SkeletonAgent": {
+        "checkpoints": [
+            {
+                "steps": 49999,
+                "file_path": "results\\SkeletonFight018\\SkeletonAgent\\SkeletonAgent-49999.onnx",
+                "reward": null,
+                "creation_time": 1748959717.5499287,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight018\\SkeletonAgent\\SkeletonAgent-49999.pt"
+                ]
+            },
+            {
+                "steps": 99938,
+                "file_path": "results\\SkeletonFight018\\SkeletonAgent\\SkeletonAgent-99938.onnx",
+                "reward": null,
+                "creation_time": 1748959766.3809404,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight018\\SkeletonAgent\\SkeletonAgent-99938.pt"
+                ]
+            },
+            {
+                "steps": 149985,
+                "file_path": "results\\SkeletonFight018\\SkeletonAgent\\SkeletonAgent-149985.onnx",
+                "reward": null,
+                "creation_time": 1748959817.0542917,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight018\\SkeletonAgent\\SkeletonAgent-149985.pt"
+                ]
+            },
+            {
+                "steps": 169785,
+                "file_path": "results\\SkeletonFight018\\SkeletonAgent\\SkeletonAgent-169785.onnx",
+                "reward": null,
+                "creation_time": 1748959895.5453527,
+                "auxillary_file_paths": [
+                    "results\\SkeletonFight018\\SkeletonAgent\\SkeletonAgent-169785.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 169785,
+            "file_path": "results\\SkeletonFight018\\SkeletonAgent.onnx",
+            "reward": null,
+            "creation_time": 1748959895.5453527,
+            "auxillary_file_paths": [
+                "results\\SkeletonFight018\\SkeletonAgent\\SkeletonAgent-169785.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
