@@ -721,7 +721,7 @@ Transform:
   m_GameObject: {fileID: 661521525}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.001, y: 1.611, z: -0.003}
+  m_LocalPosition: {x: 0.001, y: 0.518, z: -0.003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2143,17 +2143,17 @@ MonoBehaviour:
     vrTarget: {fileID: 1862178206}
     ikTarget: {fileID: 245625061}
     trackingPositionOffset: {x: 0, y: 0, z: 0}
-    trackingRotationOffset: {x: 0, y: 0, z: 0}
+    trackingRotationOffsetEuler: {x: 0, y: 0, z: 0}
   leftHand:
     vrTarget: {fileID: 2027196219}
     ikTarget: {fileID: 93212073}
     trackingPositionOffset: {x: 0, y: 0, z: 0}
-    trackingRotationOffset: {x: 0, y: 0, z: 0}
+    trackingRotationOffsetEuler: {x: 0, y: 90, z: 90}
   rightHand:
     vrTarget: {fileID: 135478939}
     ikTarget: {fileID: 411932739}
     trackingPositionOffset: {x: 0, y: 0, z: 0}
-    trackingRotationOffset: {x: 0, y: 0, z: 0}
+    trackingRotationOffsetEuler: {x: 0, y: -90, z: -90}
   headBodyPositionOffset: {x: 0, y: -0.55, z: -0.2}
   headBodyYawOffset: 0
 --- !u!1 &1711412551
@@ -2235,7 +2235,7 @@ MonoBehaviour:
   isMovingForward: 0
   terrainLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   body: {fileID: 1688823314}
   otherFoot: {fileID: 2022999973}
   speed: 4
@@ -2357,7 +2357,7 @@ MonoBehaviour:
   isMovingForward: 0
   terrainLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   body: {fileID: 1688823314}
   otherFoot: {fileID: 1785127205}
   speed: 4
