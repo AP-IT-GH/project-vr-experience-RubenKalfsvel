@@ -4,7 +4,7 @@ using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 using System.Collections;
 
-public class SkeletonAgent : Agent
+public class SkeletonAgent : Agent, IDamageable
 {
     [Header("Agent Stats")]
     public float maxHealth = 3f;
@@ -19,14 +19,13 @@ public class SkeletonAgent : Agent
     public float killReward = 2.0f;
     public float missedAttackPenalty = -0.05f;
     public float distancePenalty = -0.02f;
-    public float tooFarDistance = 10f;
+    public float tooFarDistance = 20f;
     public float combatProximityReward = 0.01f;
     public float orientationReward = 0.005f;
-
+    
     [Header("References")]
     private Animator animator;
     public GameObject weapon;
-    public SkeletonAgent opponentAgent;
     public Transform opponentTransform;
 
     private float currentHealth;
@@ -43,11 +42,7 @@ public class SkeletonAgent : Agent
     public override void OnEpisodeBegin()
     {
         ResetAgent();
-
-        if (opponentAgent != null)
-        {
-            opponentAgent.ResetAgent();
-        }
+        opponentTransform = GameObject.FindWithTag("Player").transform;
     }
 
     public void ResetAgent()
@@ -151,18 +146,6 @@ public class SkeletonAgent : Agent
     {
         attackLanded = true;
         AddReward(hitOpponentReward);
-
-        if (opponentAgent != null)
-        {
-            opponentAgent.TakeDamage(1f);
-            if (opponentAgent.currentHealth <= 0)
-            {
-                AddReward(killReward);
-                EndEpisode();
-                opponentAgent.AddReward(deathPenalty);
-                opponentAgent.EndEpisode();
-            }
-        }
     }
 
     public void TakeDamage(float damage)
@@ -200,5 +183,11 @@ public class SkeletonAgent : Agent
         continuousActionsOut[0] = Input.GetAxis("Vertical");
         continuousActionsOut[1] = Input.GetAxis("Horizontal");
         discreteActionsOut[0] = Input.GetKey(KeyCode.Space) ? 1 : 0;
+    }
+
+    public void OpponentDied()
+    {
+        AddReward(killReward);
+        EndEpisode();
     }
 }
