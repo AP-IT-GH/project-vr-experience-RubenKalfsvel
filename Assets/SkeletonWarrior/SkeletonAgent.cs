@@ -27,6 +27,7 @@ public class SkeletonAgent : Agent, IDamageable
     private Animator animator;
     public GameObject weapon;
     public Transform opponentTransform;
+    public ScoreManager scoreManager;
 
     private float currentHealth;
     private bool attackReady;
@@ -168,6 +169,7 @@ public class SkeletonAgent : Agent, IDamageable
         int deathType = Random.Range(1, 4);
         animator.SetInteger("deathType", deathType);
         AddReward(deathPenalty);
+        scoreManager.IncreaseScore();
         EndEpisode();
     }
 
