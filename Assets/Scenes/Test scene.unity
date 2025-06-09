@@ -1187,9 +1187,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4649002662564508122, guid: 64740fd9dd2bd574d90533017a915a2c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 800318079}
-    - targetCorrespondingSourceObject: {fileID: 4649002662564508122, guid: 64740fd9dd2bd574d90533017a915a2c, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 800318078}
     - targetCorrespondingSourceObject: {fileID: 1515793037560944596, guid: 64740fd9dd2bd574d90533017a915a2c, type: 3}
       insertIndex: -1
@@ -1197,6 +1194,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2833513447754932177, guid: 64740fd9dd2bd574d90533017a915a2c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1644106947}
+    - targetCorrespondingSourceObject: {fileID: 2833513447754932177, guid: 64740fd9dd2bd574d90533017a915a2c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1644106948}
   m_SourcePrefab: {fileID: 100100000, guid: 64740fd9dd2bd574d90533017a915a2c, type: 3}
 --- !u!1 &800318077 stripped
 GameObject:
@@ -1210,36 +1210,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800318077}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16a76c5d07d1af14e9ec5ee69f1b2c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
   invulnerabilityDuration: 0.5
---- !u!136 &800318079
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 800318077}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Height: 1.8
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &807937094 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 258369296110082203, guid: 5742d0035b2f28343aec0f92e8dce8b7, type: 3}
@@ -1654,6 +1631,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &1644106948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644106943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a76c5d07d1af14e9ec5ee69f1b2c2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  invulnerabilityDuration: 0.5
 --- !u!4 &1768067406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3201316790093605036, guid: 4a769d0345654f345be733003b50a3e2, type: 3}
