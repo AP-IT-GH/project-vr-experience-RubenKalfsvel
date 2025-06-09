@@ -145,6 +145,7 @@ public class SkeletonAgent : Agent, IDamageable
     public void ReportSuccessfulHit()
     {
         attackLanded = true;
+        Debug.Log("Skeleton hit player.");
         AddReward(hitOpponentReward);
     }
 
